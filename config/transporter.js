@@ -1,7 +1,7 @@
 //Settings for email application
-const nodemailer = require('nodemailer');
+var nodemailer = require('nodemailer');
 
-const transporter = nodemailer.createTransport({
+var transporter = nodemailer.createTransport({
     service: 'Mailgun',
     auth: {
         user: process.env.mg_username,

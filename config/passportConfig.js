@@ -1,14 +1,22 @@
-const connection = require("../config/connection.js");
-const LocalStrategy = require("passport-local").Strategy
-const bcrypt = require('bcryptjs');
+var connection = require('../config/connection.js');
+var LocalStrategy = require('passport-local').Strategy;
+var bcrypt = require('bcrypt');
 
-const User = require("../models/userschema.js");
 
+// load up the user model
+var User = require('../models/userschema.js');
+
+// expose this function to our app using module.exports
 module.exports = function(passport) {
+
+    // passport needs ability to serialize and unserialize users out of session
+
+    // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
         done(null, user.id);
     });
 
+    // used to deserialize the user
     passport.deserializeUser(function(id, done) {
         connection.query("SELECT * FROM users WHERE id = ? ",[id], function(err, rows){
             done(err, rows[0]);

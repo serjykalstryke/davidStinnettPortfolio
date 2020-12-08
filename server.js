@@ -1,37 +1,42 @@
-const dotenv = require("dotenv").config();
+var dotenv = require('dotenv').config();
 
-const Sequelize = require("sequelize")
-if (process.env.JAWSDB_URL) {
-  const connection = new Sequelize(process.env.JAWSDB_URL);
-} else {
-  const connection = new Sequelize("portfolio_db", "root", "password", {
-    host: "localhost",
-    dialect: "mysql",
-    port: "8080"
+//Set up the server to use mySQL locally & Jaws once deployed
+var Sequelize = require('sequelize'),
+  connection;
+if (process.env.JAWSDB_URL){
+  connection = new Sequelize(process.env.JAWSDB_URL);
+} else{
+  connection = new Sequelize('tomcariello', 'root', 'password', {
+    host: 'localhost',
+    dialect: 'mysql',
+    port:'3306'
   })
 }
 
-const express = require("express");
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
-const session = require("express-session");
-const moment = require("moment");
+var express = require('express');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var session = require('express-session');
+var moment = require('moment');
 
-const app = express();
-require("./config/passportConfig.js")(passport);
+var app = express();
+require('./config/passportConfig.js')(passport);
 
+// Serve static content for the app from the "public" directory in the application directory.
 app.use("/public", express.static(__dirname + '/public'));
-app.use(cookieParser());
+
+app.use(cookieParser()); //read cookies
 
 app.use(bodyParser.urlencoded({ //read data from forms
 	extended: false
 }));
 
-const exphbs = require("express-handlebars");
+var exphbs = require('express-handlebars'); //for templating
 
-app.set("view engine", "handlebars")
+app.set('view engine', 'handlebars');
+
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   helpers: {
@@ -52,20 +57,33 @@ app.engine('handlebars', exphbs({
   }
 }));
 
-require("./config/passportConfig.js");
+require('./config/passportConfig.js');
+
 //Passport configuration
 app.use(session({ 
-  secret: 'davidtest', // session secret
+  secret: 'tomtest', // session secret
   resave: true,
   saveUninitialized: true
  })); 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
-const routes = require("./controllers/controller.js")
-app.use("/", routes);
 
-const PORT = 8080
-app.listen(process.env.PORT || PORT, function() {
-  console.log("App now listening at localhost:" + PORT);
+//Routes
+var routes = require('./controllers/route_controller.js');
+app.use('/', routes);
+
+//Launch
+var PORT = 8080;
+app.listen(process.env.PORT || PORT);
+
+const db = require("./models")
+db.sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+      PORT,
+      PORT
+    );
+  });
 });

@@ -1,17 +1,9 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
-  "description": "refined portfolio, deployed to heroku to take advantage of handlebars rendering engine",
+  "description": "The profile page for Tom Cariello's development career.",
   "main": "server.js",
-  "dependencies": {
-    "aws": "^0.0.3-2",
-    "bcryptjs": "^2.4.3",
-    "multer": "^1.4.2",
-    "mysql2": "^2.2.5",
-    "nodemailer": "^6.4.16",
-    "passport": "^0.4.1",
-    "sequelize": "^6.3.5"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/serjykalstryke/davidStinnettPortfolio.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "David Stinnett",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/serjykalstryke/davidStinnettPortfolio/issues"
   },

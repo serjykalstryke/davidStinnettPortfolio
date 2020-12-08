@@ -1,7 +1,9 @@
-const mysql = require("mysql");
-let connection;
+//Here is where you make the connection to the database and export and used by the O.R.M.
 
-if (process.nextTick.JAWSDB_URL) {
+var mysql = require('mysql');
+var connection;
+
+if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
     connection = mysql.createConnection({
@@ -14,11 +16,11 @@ if (process.nextTick.JAWSDB_URL) {
 }
 
 connection.connect(function (err) {
-    if (err) {
-        console.error('error connecting: ' + err.stack);
-        return;
-    }
-    console.log('connected as id ' + connection.threadId);
+	if (err) {
+		console.error('error connecting: ' + err.stack);
+		return;
+	}
+	console.log('connected as id ' + connection.threadId);
 });
 
 module.exports = connection;
