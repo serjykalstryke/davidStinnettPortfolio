@@ -6,10 +6,10 @@ var Sequelize = require('sequelize'),
 if (process.env.JAWSDB_URL){
   connection = new Sequelize(process.env.JAWSDB_URL);
 } else{
-  connection = new Sequelize('tomcariello', 'root', 'password', {
+  connection = new Sequelize('portfolio_db', 'root', 'password', {
     host: 'localhost',
     dialect: 'mysql',
-    port:'3306'
+    port:'8000'
   })
 }
 
@@ -75,7 +75,7 @@ app.use('/', routes);
 
 //Launch
 var PORT = 8080;
-app.listen(process.env.PORT || PORT);
+// app.listen(process.env.PORT || PORT);
 
 const db = require("./models")
 db.sequelize.sync().then(() => {

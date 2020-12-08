@@ -1,6 +1,6 @@
 var connection = require('../config/connection.js');
 var LocalStrategy = require('passport-local').Strategy;
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 
 
 // load up the user model

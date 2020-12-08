@@ -1,9 +1,3 @@
-// const bcrypt = require('bcrypt');
-// const bodyParser = require('body-parser');
-// const connection = require('../config/connection.js');
-// const nodemailer = require('nodemailer');
-// const Twitter = require('twitter');
-
 const express = require('express');
 const passport = require('passport');
 const multer = require('multer');
@@ -105,7 +99,7 @@ router.get('/index', (req, res) => {
       // Check if user is logged in
       checkAdminStatus(req, payload);
 
-      res.render('index', { dynamicData: payload.dynamicData, layout: 'main-social' });
+      res.render('index', { dynamicData: payload.dynamicData, layout: 'main' });
     });
 });
 
@@ -143,7 +137,7 @@ router.get('/blog', (req, res) => {
     .then((data) => {
       const payload = { dynamicData: data };
       checkAdminStatus(req, payload);
-      res.render('blog', { dynamicData: payload.dynamicData, layout: 'main-social' });
+      res.render('blog', { dynamicData: payload.dynamicData, layout: 'main' });
     });
 });
 
@@ -172,10 +166,10 @@ router.get('/blogpost', (req, res) => {
             .then((blogComments) => {
               payload.dynamicData["Comments"] = blogComments;
 
-              res.render('blogpost', { dynamicData: payload.dynamicData, layout: 'main-social' });
+              res.render('blogpost', { dynamicData: payload.dynamicData, layout: 'main' });
             }).catch(() => {
               // If there are no comments
-              res.render('blogpost', { dynamicData: payload.dynamicData, layout: 'main-social' });
+              res.render('blogpost', { dynamicData: payload.dynamicData, layout: 'main' });
             });
         }
       });
