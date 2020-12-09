@@ -89,19 +89,8 @@ router.get('/vi', (req, res) => {
 });
 
 router.get('/index', (req, res) => {
-  // Query database for page information
-  models.AboutMe.findOne({
-    where: { id: 1 },
-  })
-    .then((data) => {
-      const payload = { dynamicData: data };
-
-      // Check if user is logged in
-      checkAdminStatus(req, payload);
-
-      res.render('index', { dynamicData: payload.dynamicData, layout: 'main' });
+      res.render('index', { layout: 'main' });
     });
-});
 
 router.get('/portfolio', (req, res) => {
   // get data from projects table & sort it newest first
@@ -391,8 +380,8 @@ router.post('/contact/message', (req, res) => {
   }).then(() => {
     // Send email to alert the admin that a message was recieved
     const mailOptions = {
-      from: 'contact@tomcariello.com', // sender address
-      to: 'tomcariello@gmail.com', // list of receivers
+      from: `${req.body.email}`, // sender address
+      to: 'davidstinnett@icloud.com', // list of receivers
       subject: 'Someone left you a message', // Subject line
       text: `Name: ${req.body.fname} \n Message: ${req.body.message}`,
     };
@@ -705,8 +694,8 @@ router.post('/contact/message', (req, res) => {
   }).then(() => {
     // Send email to alert the admin that a message was recieved
     const mailOptions = {
-      from: 'contact@tomcariello.com', // sender address
-      to: 'tomcariello@gmail.com', // list of receivers
+      from: `${req.body.email}`, // sender address
+      to: 'davidstinnett@icloud.com', // list of receivers
       subject: 'Someone left you a message', // Subject line
       text: `Name: ${req.body.fname} \n Message: ${req.body.message}`,
     };

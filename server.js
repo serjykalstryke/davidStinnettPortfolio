@@ -24,8 +24,8 @@ var moment = require('moment');
 var app = express();
 require('./config/passportConfig.js')(passport);
 
-// Serve static content for the app from the "public" directory in the application directory.
-app.use("/public", express.static(__dirname + '/public'));
+
+app.use(express.static("public"));
 
 app.use(cookieParser()); //read cookies
 
@@ -61,7 +61,7 @@ require('./config/passportConfig.js');
 
 //Passport configuration
 app.use(session({ 
-  secret: 'tomtest', // session secret
+  secret: 'Davidtest', // session secret
   resave: true,
   saveUninitialized: true
  })); 
