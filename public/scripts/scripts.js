@@ -1,3 +1,5 @@
+
+//Changes bootstrap classes on main page so jumbotron doesn't jump over navbar on mobile
 $(document).ready(function () {
 	console.log($(this).width())
 	if ($(this).width() < 900) {
