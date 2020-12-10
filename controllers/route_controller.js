@@ -8,7 +8,7 @@ const models = require('../models');
 const transporter = require('../config/transporter.js');
 
 const router = express.Router();
-// const sequelizeConnection = models.sequelize;
+const sequelizeConnection = models.sequelize;
 const upload = multer({ dest: path.join(__dirname, '/public/images/') });
 
 // amazon S3 configuration
