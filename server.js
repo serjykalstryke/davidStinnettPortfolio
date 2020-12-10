@@ -3,13 +3,13 @@ var dotenv = require('dotenv').config();
 //Set up the server to use mySQL locally & Jaws once deployed
 var Sequelize = require('sequelize'),
   connection;
-if (process.env.JAWSDB_URL){
+if (process.env.JAWSDB_URL) {
   connection = new Sequelize(process.env.JAWSDB_URL);
-} else{
+} else {
   connection = new Sequelize('portfolio_db', 'root', 'password', {
     host: 'localhost',
     dialect: 'mysql',
-    port:'8000'
+    port: '8000'
   })
 }
 
@@ -30,7 +30,7 @@ app.use(express.static("public"));
 app.use(cookieParser()); //read cookies
 
 app.use(bodyParser.urlencoded({ //read data from forms
-	extended: false
+  extended: false
 }));
 
 var exphbs = require('express-handlebars'); //for templating
@@ -40,18 +40,18 @@ app.set('view engine', 'handlebars');
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   helpers: {
-    'formatdate': function(datetime,format) {
+    'formatdate': function (datetime, format) {
       if (moment) {
         return moment(datetime).format("DD MMMM - YYYY");
       } else {
         return datetime;
       }
     },
-    'limittext': function(data) {
+    'limittext': function (data) {
       data = decodeURIComponent(data);
-      return data.substring(0,400) + "...";
+      return data.substring(0, 400) + "...";
     },
-    'decodeSummernote': function(data) {
+    'decodeSummernote': function (data) {
       return data = decodeURIComponent(data);
     }
   }
@@ -60,11 +60,11 @@ app.engine('handlebars', exphbs({
 require('./config/passportConfig.js');
 
 //Passport configuration
-app.use(session({ 
+app.use(session({
   secret: 'Davidtest', // session secret
   resave: true,
   saveUninitialized: true
- })); 
+}));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
@@ -74,7 +74,7 @@ var routes = require('./controllers/route_controller.js');
 app.use('/', routes);
 
 //Launch
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 // app.listen(process.env.PORT || PORT);
 
 const db = require("./models")
