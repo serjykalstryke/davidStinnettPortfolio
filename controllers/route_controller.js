@@ -38,43 +38,43 @@ function sendAutomaticEmail(mailOptions) {
 }
 
 // Check Administrator status and add to object
-function checkAdminStatus(req, payload) {
-  if (req.user) {
-    payload.dynamicData.administrator = true;
-  }
-  return payload;
-}
+// function checkAdminStatus(req, payload) {
+//   if (req.user) {
+//     payload.dynamicData.administrator = true;
+//   }
+//   return payload;
+// }
 
-// Function to upload an image to Amazon S3
-const uploadToS3 = (fileName, stream, fileType) => {
-  // Create a Promise to control the Async of the file upload
-  return new Promise((resolve, reject) => {
-    // Instantiate Amazon S3 module
-    const s3 = new aws.S3();
+// // Function to upload an image to Amazon S3
+// const uploadToS3 = (fileName, stream, fileType) => {
+//   // Create a Promise to control the Async of the file upload
+//   return new Promise((resolve, reject) => {
+//     // Instantiate Amazon S3 module
+//     const s3 = new aws.S3();
 
-    // Create object to upload to S3
-    const params = {
-      Bucket: S3_BUCKET, // My S3 Bucket
-      Key: fileName, // This is what S3 will use to store the data uploaded.
-      Body: stream, // the actual *file* being uploaded
-      ContentType: fileType, // type of file being uploaded
-      ACL: 'public-read', // Set permissions so everyone can see the image
-      processData: false,
-      accessKeyId: S3AccessKeyId, // My Key
-      secretAccessKey: S3SecretAccessKey, // My Secret Key
-    };
+//     // Create object to upload to S3
+//     const params = {
+//       Bucket: S3_BUCKET, // My S3 Bucket
+//       Key: fileName, // This is what S3 will use to store the data uploaded.
+//       Body: stream, // the actual *file* being uploaded
+//       ContentType: fileType, // type of file being uploaded
+//       ACL: 'public-read', // Set permissions so everyone can see the image
+//       processData: false,
+//       accessKeyId: S3AccessKeyId, // My Key
+//       secretAccessKey: S3SecretAccessKey, // My Secret Key
+//     };
 
-    // Upload the object
-    s3.upload(params, (err, data) => {
-      if (err) {
-        reject(Error('It broke'));
-      } else {
-        // Return the filepath to the uploaded image
-        resolve(data.Location);
-      }
-    });
-  });
-};
+//     // Upload the object
+//     s3.upload(params, (err, data) => {
+//       if (err) {
+//         reject(Error('It broke'));
+//       } else {
+//         // Return the filepath to the uploaded image
+//         resolve(data.Location);
+//       }
+//     });
+//   });
+// };
 
 
 // ==================================
@@ -89,8 +89,8 @@ router.get('/vi', (req, res) => {
 });
 
 router.get('/index', (req, res) => {
-      res.render('index', { layout: 'main' });
-    });
+  res.render('index', { layout: 'main' });
+});
 
 router.get('/portfolio', (req, res) => {
   // get data from projects table & sort it newest first
