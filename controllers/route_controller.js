@@ -89,31 +89,12 @@ router.get('/index', (req, res) => {
 });
 
 router.get('/portfolio', (req, res) => {
-  // get data from projects table & sort it newest first
-  models.Project.findAll({ order: [['id', 'DESC']] })
-    .then((data) => {
-      const payload = { dynamicData: data };
-      checkAdminStatus(req, payload);
-      res.render('portfolio', { dynamicData: payload.dynamicData });
-    });
+  res.render('portfolio', { layout: "main" });
 });
 
 router.get('/contact', (req, res) => {
-  const payload = {
-    dynamicData: {
-      messageSent: false,
-    },
-  };
 
-  checkAdminStatus(req, payload);
-
-  // Add messageSent credential to the created object
-  if (req.session.messageSent) {
-    payload.dynamicData.messageSent = true;
-    req.session.messageSent = false;
-  }
-
-  res.render('contact', { dynamicData: payload.dynamicData, layout: 'main' });
+  res.render('contact', { layout: 'main' });
 });
 
 // Load the frontend main blog page
