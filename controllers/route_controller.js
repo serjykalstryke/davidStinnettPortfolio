@@ -84,10 +84,6 @@ router.get('/', (req, res) => {
   res.redirect('/index');
 });
 
-router.get('/vi', (req, res) => {
-  res.render('vi');
-});
-
 router.get('/index', (req, res) => {
   res.render('index', { layout: 'main' });
 });
