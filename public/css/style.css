@@ -78,7 +78,7 @@ body {
   }
 
 @media all and (max-width: 500px) {
-    img {
+    #me {
       border-radius: 100%;
       padding-top: 40%;
       padding-bottom: 5%;
