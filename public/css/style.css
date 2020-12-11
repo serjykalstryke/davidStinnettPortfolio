@@ -72,6 +72,16 @@ body {
   }
 
   img {
-	  border-radius: 2px 2px
+    border-radius: 2px 2px;
+    padding-top: 10%; 
+    padding-bottom: 5%;
+  }
+
+@media all and (max-width: 500px) {
+    img {
+      border-radius: 100%;
+      padding-top: 40%;
+      padding-bottom: 5%;
+    }
   }
 
