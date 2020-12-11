@@ -77,7 +77,7 @@ body {
     padding-bottom: 5%;
   }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 800px) {
     #me {
       border-radius: 100%;
       padding-top: 40%;
