@@ -1,3 +1,4 @@
 node_modules/
 .env
 package-lock.json
+.gitignorenode_modules/
