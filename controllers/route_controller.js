@@ -5,37 +5,16 @@ const fs = require('fs');
 const aws = require('aws-sdk');
 const path = require('path');
 const models = require('../models');
-const transporter = require('../config/transporter.js');
+const nodemailer = require('nodemailer');
+const mg = require('nodemailer-mailgun-transport');
 
 const router = express.Router();
 const sequelizeConnection = models.sequelize;
-const upload = multer({ dest: path.join(__dirname, '/public/images/') });
-
-// amazon S3 configuration
-const S3_BUCKET = process.env.S3_BUCKET;
-const S3AccessKeyId = process.env.AWS_ACCESS_KEY_ID;
-const S3SecretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
+const dotenv = require('dotenv').config()
 
 
-// route middleware to make sure user is verified
-function isLoggedIn(req, res, next) {
-  // if user is authenticated in the session, carry on
-  let loginCheckAction;
-  if (req.isAuthenticated()) {
-    loginCheckAction = next();
-  } else {
-    loginCheckAction = res.redirect('/');
-  }
-  return loginCheckAction;
-}
 
-function sendAutomaticEmail(mailOptions) {
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error, info);
-    }
-  });
-}
+
 
 // ==================================
 // =====GET routes to load pages=====
@@ -61,60 +40,51 @@ router.get('/aboutMe', (req, res) => {
   res.render('aboutMe', { layout: 'main' })
 })
 
-// ==================================
-// ===POST route to sent messages====
-// ==================================
 
-router.post('/contact/message', (req, res) => {
-  const currentDate = new Date();
+// router.post("/email", (req, res) => {
+//   const smtpTrans = nodemailer.createTransport({
+//     service: 'Mailgun',
+//     auth: {
+//       user: process.env.mailgun_username,
+//       pass: process.env.mailgun_password
+//     }
+//   });
+//   const mailOpts = {
+//     from: req.body.formEmail, // This is ignored by Gmail
+//     to: process.env.myEmail,
+//     subject: 'New Message from portolio contact page',
+//     text: `${req.body.formName} (${req.body.formEmail}) says: ${req.body.formMessage}`
+//   };
+//   console.log(mailOpts);
+//   mailgun.messages().send(data, function (error, body) {
+//     console.log(body);
+//   });
+// });
 
-  // Use Sequelize to push to DB
-  models.Messages.create({
-    name: req.body.fname,
-    email: req.body.email,
-    message: req.body.message,
-    createdAt: currentDate,
-    updatedAt: currentDate,
-  }).then(() => {
-    // Send email to alert the admin that a message was recieved
-    const mailOptions = {
-      from: `${req.body.email}`, // sender address
-      to: 'davidstinnett@icloud.com', // list of receivers
-      subject: 'Someone left you a message', // Subject line
-      text: `Name: ${req.body.fname} \n Message: ${req.body.message}`,
-    };
-
-    sendAutomaticEmail(mailOptions);
-    req.session.messageSent = true;
-
-    res.redirect('../contact');
+router.post("/email", (req, res) => {
+  const auth = {
+    auth: {
+      apiKey: process.env.mg_API,
+      domain: 'davidstinnett.info'
+    }
+  }
+  const nodemailerMailgun = nodemailer.createTransport(mg(auth));
+  nodemailerMailgun.sendMail({
+    from: 'david@davidstinnett.info',
+    to: 'davidstinnett34@gmail.com', // An array if you have multiple recipients.
+    subject: 'Message from davidstinnett.info',
+    text: `${req.body.name} \n (${req.body.email}) \n says: ${req.body.text}`
+  }, (err, info) => {
+    if (err) {
+      console.log(`Error: ${err}`);
+    }
+    else {
+      console.log(`Response: ${info.response}`);
+    }
   });
 });
 
 
-router.post('/contact/message', (req, res) => {
-  const currentDate = new Date();
 
-  // Use Sequelize to push to DB
-  models.Messages.create({
-    name: req.body.fname,
-    email: req.body.email,
-    message: req.body.message,
-    createdAt: currentDate,
-    updatedAt: currentDate,
-  }).then(() => {
-    // Send email to alert the admin that a message was recieved
-    const mailOptions = {
-      from: `${req.body.email}`, // sender address
-      to: 'davidstinnett@icloud.com', // list of receivers
-      subject: 'Someone left you a message', // Subject line
-      text: `Name: ${req.body.fname} \n Message: ${req.body.message}`,
-    };
 
-    sendAutomaticEmail(mailOptions);
-    req.session.messageSent = true;
-
-    res.redirect('../contact');
-  });
-});
 module.exports = router;

@@ -1,6 +1,6 @@
 'use strict';
 
-const { Pool } = require('sequelize-pool');
+const { Pool, TimeoutError } = require('sequelize-pool');
 const _ = require('lodash');
 const semver = require('semver');
 const Promise = require('../../promise');
@@ -44,7 +44,7 @@ class ConnectionManager {
 
   refreshTypeParser(dataTypes) {
     _.each(dataTypes, dataType => {
-      if (dataType.hasOwnProperty('parse')) {
+      if (Object.prototype.hasOwnProperty.call(dataType, 'parse')) {
         if (dataType.types[this.dialectName]) {
           this._refreshTypeParser(dataType);
         } else {
@@ -71,8 +71,15 @@ class ConnectionManager {
       if (this.sequelize.config.dialectModule) {
         return this.sequelize.config.dialectModule;
       }
-      return require(moduleName);
-
+      // This is needed so that bundlers (like webpack) know which library to include in the bundle
+      switch (moduleName) {
+        case 'pg': return require('pg');
+        case 'mysql2': return require('mysql2');
+        case 'mariadb': return require('mariadb');
+        case 'sqlite3': return require('sqlite3');
+        case 'tedious': return require('tedious');
+        default: return require(moduleName);
+      }
     } catch (err) {
       if (err.code === 'MODULE_NOT_FOUND') {
         if (this.sequelize.config.dialectModulePath) {
@@ -278,9 +285,11 @@ class ConnectionManager {
 
     return promise.then(() => {
       return this.pool.acquire(options.type, options.useMaster)
-        .catch(Promise.TimeoutError, err => { throw new errors.ConnectionAcquireTimeoutError(err); })
-        .tap(() => { debug('connection acquired'); });
-    });
+        .catch(error => {
+          if (error instanceof TimeoutError) throw new errors.ConnectionAcquireTimeoutError(error);
+          throw error;
+        });
+    }).tap(() => { debug('connection acquired'); });
   }
 
   /**
@@ -318,7 +327,9 @@ class ConnectionManager {
    * @returns {Promise}
    */
   _disconnect(connection) {
-    return this.dialect.connectionManager.disconnect(connection);
+    return this.sequelize.runHooks('beforeDisconnect', connection)
+      .then(() => this.dialect.connectionManager.disconnect(connection))
+      .then(() => this.sequelize.runHooks('afterDisconnect', connection));
   }
 
   /**

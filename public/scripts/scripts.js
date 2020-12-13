@@ -3,9 +3,30 @@
 $(document).ready(function () {
 	console.log($(this).width())
 	if ($(this).width() < 900) {
-		$('#jumbotron').removeClass('top-50').removeClass('start-50').removeClass('translate-middle').addClass("top-0").addClass("start-50").addClass("translate-middle-x")
+		$('#moveme').removeClass('top-50').removeClass('start-50').removeClass('translate-middle').addClass("top-0").addClass("start-50").addClass("translate-middle-x")
 	}
 	else {
-		$('#jumbotron').removeClass("top-0").removeClass("start-50").removeClass("translate-middle-x").addClass('top-50').addClass('start-50').addClass('translate-middle')
+		$('#moveme').removeClass("top-0").removeClass("start-50").removeClass("translate-middle-x").addClass('top-50').addClass('start-50').addClass('translate-middle')
 	}
 })
+
+
+//nodemailer function
+
+$('.contactForm').on('submit', (e) => {
+	e.preventDefault();
+	const name = $("#name").val().trim();
+	const email = $('#email').val().trim();
+	const text = $('#message').val().trim();
+
+	const data = {
+		name,
+		email,
+		text
+	};
+	console.log(data);
+	$.post('/email', data, function () {
+		console.log('Server recieved our data');
+	});
+
+});
