@@ -1,5 +1,4 @@
-
-//Changes bootstrap classes on main page so jumbotron doesn't jump over navbar on mobile
+//Changes bootstrap classes on main page so jumbotron doesn't jump over navbar on mobi
 $(document).ready(function () {
 	console.log($(this).width())
 	if ($(this).width() < 900) {
@@ -25,8 +24,13 @@ $('.contactForm').on('submit', (e) => {
 		text
 	};
 	console.log(data);
+	swal("Thank you for your message! I will get back to you ASAP!").then(okay => {
+		if (okay) {
+			window.location.reload();
+		}
+	});
+	// alert("Thank you for your message, I will get back to you as soon as I am able!")
 	$.post('/email', data, function () {
 		console.log('Server recieved our data');
-	});
-
+	})
 });
