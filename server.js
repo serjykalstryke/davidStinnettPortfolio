@@ -56,7 +56,6 @@ app.engine('handlebars', exphbs({
   }
 }));
 
-require('./config/passportConfig.js');
 
 //Passport configuration
 app.use(session({
