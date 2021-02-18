@@ -4,13 +4,10 @@ const multer = require('multer');
 const fs = require('fs');
 const aws = require('aws-sdk');
 const path = require('path');
-const models = require('../models');
 const nodemailer = require('nodemailer');
 const mg = require('nodemailer-mailgun-transport');
 
 const router = express.Router();
-const sequelizeConnection = models.sequelize;
-const dotenv = require('dotenv').config()
 
 
 

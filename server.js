@@ -44,16 +44,13 @@ var routes = require('./controllers/route_controller.js');
 app.use('/', routes);
 
 //Launch
-var PORT = process.env.PORT || 3306;
+var PORT = process.env.PORT || 4000;
 // app.listen(process.env.PORT || PORT);
 
-const db = require("./models")
-db.sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
+app.listen(PORT, () => {
+  console.log(
+    "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+    PORT,
+    PORT
+  );
 });
