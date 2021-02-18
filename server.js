@@ -1,24 +1,6 @@
-var dotenv = require('dotenv').config();
-
-//Set up the server to use mySQL locally & Jaws once deployed
-var Sequelize = require('sequelize'),
-  connection;
-if (process.env.JAWSDB_URL) {
-  connection = new Sequelize(process.env.JAWSDB_URL);
-} else {
-  connection = new Sequelize('portfolio_db', 'root', 'password', {
-    host: 'localhost',
-    dialect: 'mysql',
-    port: '3306'
-  })
-}
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var session = require('express-session');
 var moment = require('moment');
 
 var app = express();
@@ -55,16 +37,6 @@ app.engine('handlebars', exphbs({
     }
   }
 }));
-
-
-//Passport configuration
-app.use(session({
-  secret: 'Davidtest', // session secret
-  resave: true,
-  saveUninitialized: true
-}));
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
 
 
 //Routes
