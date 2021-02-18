@@ -74,7 +74,7 @@ var routes = require('./controllers/route_controller.js');
 app.use('/', routes);
 
 //Launch
-var PORT = process.env.PORT || 4200;
+var PORT = process.env.PORT || 3306;
 // app.listen(process.env.PORT || PORT);
 
 const db = require("./models")
