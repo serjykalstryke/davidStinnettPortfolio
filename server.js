@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
   connection = new Sequelize('portfolio_db', 'root', 'password', {
     host: 'localhost',
     dialect: 'mysql',
-    port: '5000'
+    port: '4200'
   })
 }
 
