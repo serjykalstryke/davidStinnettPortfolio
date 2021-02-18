@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
   connection = new Sequelize('portfolio_db', 'root', 'password', {
     host: 'localhost',
     dialect: 'mysql',
-    port: '4200'
+    port: '3306'
   })
 }
 
@@ -22,7 +22,6 @@ var session = require('express-session');
 var moment = require('moment');
 
 var app = express();
-require('./config/passportConfig.js')(passport);
 
 
 app.use(express.static("public"));
