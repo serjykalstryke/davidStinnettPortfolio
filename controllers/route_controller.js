@@ -41,26 +41,6 @@ router.get('/aboutMe', (req, res) => {
 })
 
 
-// router.post("/email", (req, res) => {
-//   const smtpTrans = nodemailer.createTransport({
-//     service: 'Mailgun',
-//     auth: {
-//       user: process.env.mailgun_username,
-//       pass: process.env.mailgun_password
-//     }
-//   });
-//   const mailOpts = {
-//     from: req.body.formEmail, // This is ignored by Gmail
-//     to: process.env.myEmail,
-//     subject: 'New Message from portolio contact page',
-//     text: `${req.body.formName} (${req.body.formEmail}) says: ${req.body.formMessage}`
-//   };
-//   console.log(mailOpts);
-//   mailgun.messages().send(data, function (error, body) {
-//     console.log(body);
-//   });
-// });
-
 router.post("/email", (req, res) => {
   const auth = {
     auth: {
