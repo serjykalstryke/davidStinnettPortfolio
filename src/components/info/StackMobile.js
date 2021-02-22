@@ -9,7 +9,7 @@ const StackMobile = () => {
       <Row>
         <Col className="text">
           <h1>Languages & Frameworks</h1>
-          <h3>Dream it</h3>
+          
           <hr />
           <ul className='stackUl'>
             <li>React</li>
@@ -23,7 +23,7 @@ const StackMobile = () => {
         </Col>
         <Col className="text">
           <h1>Tools & Libraries</h1>
-          <h3>Build it</h3>
+         
           <hr />
 
           <ul className='stackUl text'>
