@@ -265,6 +265,14 @@ img {
 }
 
 @media (max-width: 768px) {
+
+ * {
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
   /* arbitrary breakpoint, around the size of a tablet */
   .logo,
   .mobile-dropdown-toggle {
@@ -338,7 +346,8 @@ img {
   }
   .stackBlock {
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 25%;
+    padding-bottom: 20%
   }
   .headshot {
     max-width: 40%;
@@ -356,6 +365,7 @@ img {
     display: none;
   }
 
+ 
 }
 
 #nav-icon1 {
