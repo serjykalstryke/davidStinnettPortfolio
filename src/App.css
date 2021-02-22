@@ -1,0 +1,429 @@
+* {
+  font-family: Truculenta;
+  font-size: 1rem
+}
+
+
+body {
+  background-image:url("./images/Desert-Evening-Desktop-Wallpaper.png");
+  background-attachment: fixed;
+  background-size: 2650px 1440px;
+  -webkit-background-size: 2650px 1440px;
+}
+
+.jumboText {
+  color: white;
+}
+
+
+@keyframes particleAnimation
+{
+  from {
+      left: -100px;
+  }
+  to {
+      left: calc( 100% + 100px );
+  }
+}
+
+ul { 
+	display: inline-block; 
+	text-align: left; 
+  list-style-type: none;
+	}
+
+li::selection {
+  background-color: rgba(209,104,119, 1);
+}
+.s{
+position:fixed;
+left:0px;
+top:5px;
+width:0.2px;
+height:0.2px;
+background-color: rgba(0,0,0,0);
+position:fixed;
+animation-name:particleAnimation;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+border-radius: 50;
+}
+.s::before{
+position:absolute;
+display:block;
+content:"";
+width:100px;
+right:1px;
+top:10px;
+height:1px;
+background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%); 
+}
+.p-1{
+animation-duration:30s;
+top: 20%;
+}
+
+
+.dot {
+  height: 1px;
+  width: 1px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+
+.fa-satellite {
+  color: rgba(0,0,0,0.25);
+  z-index: -1
+}
+
+.top {
+  z-index: 1;
+}
+
+img {
+  border-radius: 50%;
+  padding-top: 10%; 
+  padding-bottom: 5%;
+}
+
+#me {
+  width: 30%;
+  height: auto;
+  
+}
+
+.jumbotron {
+  background: transparent;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent !important;
+  height: 50%;
+}
+
+.nav {
+  background-color: transparent !important;
+  max-width: 75%; /* should match the width of your website content */
+  display: flex;
+  align-items: center; /* center each of our links vertically */
+  margin: auto; /* center all our content horizontally when we exceed that max-width */
+  
+}
+
+.links {
+  display: inline-block !important;
+  color: #143840;
+  align-items: right;
+}
+
+.links:hover {
+  color: rgba(209,104,119, 1)
+}
+
+.logo {
+  margin-right: auto !important; /* push all our links to the right side, leaving the logo on the left */
+}
+
+.landingBlock {
+  margin-top: 20%;
+  /* margin-bottom: 15%; */
+  padding-bottom: 10%
+}
+
+.landingMargin {
+  margin-bottom: 3rem;
+  font-family: "Rock Salt"
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+}
+
+.text::selection {
+  background-color: rgba(209,104,119, 1)
+}
+
+
+.otherText {
+  color: white
+}
+
+.otherText::selection {
+  background-color: rgba(209,104,119, 1)
+}
+
+.recentProjects {
+  font-family: "Rock Salt"
+}
+
+.bioBlock {
+  margin-top: 15%;
+  margin-bottom: 25%;
+  padding-bottom: 15%;
+}
+
+.mobile-dropdown-toggle {
+  display: none; /* hide our hamburger button until we're on mobile */
+}
+
+#nav-icon1 {
+  width: 3rem;
+  height: auto;
+  position: relative;
+  margin: 2rem auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.arrowBounce {
+  position: relative;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.arrowScrollDown {
+  animation: arrowAnimation 1.5s infinite ease-out;
+}
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+
+.filterIcon {
+  cursor: pointer;
+  max-height: 4rem;
+  margin: 1rem;
+  justify-content: center;
+}
+
+.magnifyBtn {
+  padding: 12px 24px;
+  background-color: hsl(222, 100%, 95%);
+  border-radius: 6px;
+  transition: transform 250ms ease-in-out;
+}
+
+.compactCard {
+  display: inline-flex;
+  text-align: center;
+  width: 40%;
+  margin: 1%;
+  cursor: pointer;
+}
+
+.expandedCard {
+  display: inline-flex;
+  text-align: center;
+  height: auto;
+  width: 75%;
+  margin: 1%;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mediaQuery {
+  width: 100% !important;
+  background-color: rgba(209,104,119,.85);
+}
+
+@media (max-width: 768px) {
+  /* arbitrary breakpoint, around the size of a tablet */
+  .logo,
+  .mobile-dropdown-toggle {
+    z-index: 4;
+  }
+  .nav {
+    padding-top: 2.5rem;
+  }
+  .mobile-dropdown-toggle {
+    display: initial; /* override that display: none attribute from before */
+    background-color: transparent;
+    border: none;
+  }
+  .dropdown-link-container {
+    /* first, make our dropdown cover the screen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    /* fix nav height on mobile safari, where 100vh is a little off */
+    height: -webkit-fill-available;
+
+    /* add margins and padding to taste */
+    margin: 0;
+    padding-left: 7vw;
+    padding-right: 7vw;
+
+    backdrop-filter: blur(4px);
+    z-index: 3; /* we're gonna avoid using -1 here, since it could position our navbar below other content on the page as well! */
+
+    opacity: 0; /* fade out */
+    transform: translateY(-100%); /* move out of view */
+    transition: transform 0.2s, opacity 0.2s; /* transition these smoothly */
+  }
+
+  .dropdown-links {
+    /* then, arrange our links top to bottom */
+    display: flex;
+    flex-direction: column;
+    /* center links vertically and horizontally.
+       this means our links will line up with the rightward hamburger button */
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    width: 100%;
+    background-color: rgba(209,104,119,.85);
+    padding: 2rem;
+  }
+
+  .links {
+    font-size: 2rem;
+    font-weight: bold;
+    
+  }
+
+  nav.dropdown-opened > .dropdown-link-container {
+    opacity: 1; /* fade in */
+    transform: translateY(0); /* move into view */
+  }
+
+  .landingBlock {
+    margin-bottom: 5%;
+  }
+  .landingMargin {
+    margin-bottom: 1rem;
+  }
+  .bioBlock {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .stackBlock {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+  .headshot {
+    max-width: 40%;
+  }
+  .projectDetail {
+
+    border-radius: 1rem;
+    padding: 0;
+    justify-content: center;
+  }
+  .mediaQuery {
+    width: 100% !important;
+  }
+  .hideMobile {
+    display: none;
+  }
+
+}
+
+#nav-icon1 {
+  width: 3rem;
+  height: auto;
+  position: relative;
+  margin: 2rem auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  color: white;
+}
+
+#nav-icon1 span {
+  display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon1 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon1 span:nth-child(2) {
+  top: 18px;
+}
+
+#nav-icon1 span:nth-child(3) {
+  top: 36px;
+}
+
+#nav-icon1.dropdown-opened span:nth-child(1) {
+  top: 18px;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+#nav-icon1.dropdown-opened span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+#nav-icon1.dropdown-opened span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
