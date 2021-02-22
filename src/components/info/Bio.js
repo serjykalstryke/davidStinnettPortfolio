@@ -16,7 +16,7 @@ const Bio = () => {
             roundedCircle
           />
           <div>
-            <h1 className="text">Let's Make Something Beautiful</h1>
+            <h1 className="otherText" style={{fontWeight: "bold"}}>Let's Make Something Beautiful</h1>
             <p className="text">
               My name is David Stinnett, and I am a graduate of the University of Richmond Coding Bootcamp. When I am not busy with my responsibilities as a husband and father, I enjoy playing music and coding. My favorite thing in the world is diving into new Javascript frameworks.
             </p>
