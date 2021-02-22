@@ -6,19 +6,16 @@ const ProjectDetail = ({ name, description, repo, app }) => {
   return (
     <div className='projectDetail mediaQuery'>
       <Card.Title
-        className='mediaQuery'
+        className='mediaQuery text'
         style={{
-          color: '#143840',
           fontWeight: 'bold'
         }}
       >
         {name}
       </Card.Title>
       <Card.Text
-        className='mediaQuery'
-        style={{
-          color: '#143840'
-        }}
+        className='mediaQuery text'
+        
       >
         {description}
       </Card.Text>
