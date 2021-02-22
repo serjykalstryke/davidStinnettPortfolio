@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import ContactModal from '../contact/ContactModal';
 import Hamburger from './Hamburger';
-
+import Logo from './Logo';
 import resume from "../../resume/DavidStinnettResume.pdf"
 
 import Nav from 'react-bootstrap/Nav';
@@ -17,7 +17,8 @@ export const NavBar = () => {
 
   return (
     <Navbar className={mobileNavOpened ? 'nav dropdown-opened' : 'nav'}>
-      <Navbar.Brand className='logo hideMobile' href='/'><p className="text links">David Stinnett</p>
+      <Navbar.Brand className='logo hideMobile' href='/'>
+          <Logo logo="../img/logo.png" logoAlt="David's logo" />
       </Navbar.Brand>
 
       <Hamburger toggleMobileNav={toggleMobileNav} opened={mobileNavOpened} />
