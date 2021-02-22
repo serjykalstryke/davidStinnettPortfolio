@@ -13,7 +13,7 @@ const ProjectFilter = ({ filter }) => {
       <FilterIcon filter={filter} filterName='mysql' />
 
       <i
-        className='far fa-times-circle'
+        className='far fa-times-circle text'
         onClick={() => filter('')}
         style={{
           display: 'block',
