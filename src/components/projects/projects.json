@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Open House CRM",
-    "description": "A professional grade tool for real estate professionals to manage their contacts, transactions, and other pertinant business data. This project features a modular codebase making it useful for any business professional.",
+    "description": "A professional grade tool for real estate professionals to manage their contacts, transactions, and other important business data. This project features a modular codebase making it useful for any business professional. Built using React, Material-UI, a context API, and a MongoDB database.",
     "img": "./img/openHouse.png",
     "alt": "Open House CRM",
     "repo": "https://github.com/lucsedirae/open-house-crm",
@@ -12,7 +12,7 @@
   {
     "id": 2,
     "name": "Together Against",
-    "description": "In these trying times, it can be so hard to find a good way to compete with friends. Together Against seeks to bring back the spirit of competition that we all miss. Whether you want to play video games, plan a sporting event or play a tabletop game, together against is the ideal platform to show your friends who is boss!",
+    "description": "In these trying times, it can be so hard to find a good way to compete with friends. Together Against seeks to bring back the spirit of competition that we all miss. Whether you want to play video games, plan a sporting event or play a tabletop game, together against is the ideal platform to show your friends who is boss! Built using Handlebars, MySQL, and Bootstrap.",
     "img": "./img/togetherAgainst.png",
     "alt": "Perspektiv",
     "repo": "https://github.com/serjykalstryke/LeopardLightning",
@@ -52,7 +52,7 @@
   {
     "id": 6,
     "name": "Pitch",
-    "description": "Imagine you are hanging out with friends. Your buddy mentions a band he has been listening to. Another friend says she has heard of them too and you should check them out. What do you do? Add them to your spotify, maybe subscribe on youtube and then forget about this new band you might love because of the information overload of the modern world. Enter Pitch. Pitch allows you to search for artists and bands and get a bite sized chunk of what they are all about, including basic info, tour dates and their top youtube result to tell you at a glance if this new band is for you.",
+    "description": "Imagine you are hanging out with friends. Your buddy mentions a band he has been listening to. Another friend says she has heard of them too and you should check them out. What do you do? Add them to your spotify, maybe subscribe on youtube and then forget about this new band you might love because of the information overload of the modern world. Enter Pitch. Pitch allows you to search for artists and bands and get a bite sized chunk of what they are all about, including basic info, tour dates and their top youtube result to tell you at a glance if this new band is for you. Built using JavaScript, JQuery, and Materialize.",
     "img": "./img/pitch.png",
     "alt": "GitJobs",
     "repo": "https://github.com/serjykalstryke/deep-cuts",
