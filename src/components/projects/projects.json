@@ -1,73 +1,73 @@
 [
-    {
-      "id": 1,
-      "name": "Open House CRM",
-      "description": "A professional grade tool for real estate professionals to manage their contacts, transactions, and other pertinant business data. This project features a modular codebase making it useful for any business professional.",
-      "img": "./img/openHouse.png",
-      "alt": "Open House CRM",
-      "repo": "https://github.com/lucsedirae/open-house-crm",
-      "app": "https://open-house-crm.herokuapp.com/",
-      "tech": ["react", "javascript", "mongodb", "nodejs", "Material-UI"]
-    },
-    {
-      "id": 2,
-      "name": "Together Against",
-      "description": "In these trying times, it can be so hard to find a good way to compete with friends. Together Against seeks to bring back the spirit of competition that we all miss. Whether you want to play video games, plan a sporting event or play a tabletop game, together against is the ideal platform to show your friends who is boss!",
-      "img": "./img/togetherAgainst.png",
-      "alt": "Perspektiv",
-      "repo": "https://github.com/serjykalstryke/LeopardLightning",
-      "app": "https://leopard-ta.herokuapp.com/",
-      "tech": ["jquery", "Bootstrap", "javascript", "mysql", "nodejs"]
-    },
-    {
-      "id": 3,
-      "name": "React Employee Directory",
-      "description": "An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. Built with React, this page makes an API call to the Random User API to populate the employee data. That data can then be sorted by first or last name, ascending or descending, alphabetically. You can also search the list by first name, last name, or phone number.",
-      "img": "./img/employeeDirectory.png",
-      "alt": "React Employee Directory",
-      "repo": "https://github.com/serjykalstryke/employee-directory",
-      "app": "https://rocky-bastion-94883.herokuapp.com/",
-      "tech": ["react", "axios", "javascript"]
-    },
-    {
-      "id": 4,
-      "name": "GitHub Finder",
-      "description": "A software engineering team generator CLI with a twist. The application prompts the user for information about the team manager and then information about each team member. The user can input any number and combination of team members (a mix of engineers and interns). When the user has completed building the team, the application will create an HTML file that displays a team roster based on the information provided.",
-      "img": "./img/githubFinder.png",
-      "alt": "GitHub Finder",
-      "repo": "https://github.com/serjykalstryke/githubFinder",
-      "app": "https://serjykalstrykegithubfinder.netlify.app/",
-      "tech": ["react", "javascript"]
-    },
-    {
-      "id": 5,
-      "name": "Notes App",
-      "description": "For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed. This application can be used to write, save, and delete notes by using an express backend to save and retrieve data from a JSON file.",
-      "img": "./img/noteTaker.png",
-      "alt": "Notes App",
-      "repo": "https://github.com/serjykalstryke/notes-app",
-      "app": "https://whispering-cliffs-94982.herokuapp.com",
-      "tech": ["nodejs", "express", "javascript"]
-    },
-    {
-      "id": 6,
-      "name": "Pitch",
-      "description": "Imagine you are hanging out with friends. Your buddy mentions a band he has been listening to. Another friend says she has heard of them too and you should check them out. What do you do? Add them to your spotify, maybe subscribe on youtube and then forget about this new band you might love because of the information overload of the modern world. Enter Pitch. Pitch allows you to search for artists and bands and get a bite sized chunk of what they are all about, including basic info, tour dates and their top youtube result to tell you at a glance if this new band is for you.",
-      "img": "./img/pitch.png",
-      "alt": "GitJobs",
-      "repo": "https://github.com/serjykalstryke/deep-cuts",
-      "app": "https://serjykalstryke.github.io/deep-cuts/",
-      "tech": ["javascript","jquery","Materialize"]
-    },
-    {
-      "id": 7,
-      "name": "Burger Time",
-      "description": "A burger logger with MySQL, Node, Express, Handlebars and a custom ORM. Following the MVC design pattern, I've used Node and MySQL to query and route data in the app, and Handlebars to generate the HTML.",
-      "img": "./img/burger.png",
-  
-      "alt": "Eat Da Burger",
-      "repo": "https://github.com/serjykalstryke/burger",
-      "app": "https://polar-eyrie-61177.herokuapp.com/",
-      "tech": ["nodejs", "express", "javascript", "mysql", "jquery", "handlebars"]
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Open House CRM",
+    "description": "A professional grade tool for real estate professionals to manage their contacts, transactions, and other pertinant business data. This project features a modular codebase making it useful for any business professional.",
+    "img": "./img/openHouse.png",
+    "alt": "Open House CRM",
+    "repo": "https://github.com/lucsedirae/open-house-crm",
+    "app": "https://open-house-crm.herokuapp.com/",
+    "tech": ["react", "javascript", "mongodb", "nodejs", "Material-UI"]
+  },
+  {
+    "id": 2,
+    "name": "Together Against",
+    "description": "In these trying times, it can be so hard to find a good way to compete with friends. Together Against seeks to bring back the spirit of competition that we all miss. Whether you want to play video games, plan a sporting event or play a tabletop game, together against is the ideal platform to show your friends who is boss!",
+    "img": "./img/togetherAgainst.png",
+    "alt": "Perspektiv",
+    "repo": "https://github.com/serjykalstryke/LeopardLightning",
+    "app": "https://leopard-ta.herokuapp.com/",
+    "tech": ["jquery", "Bootstrap", "javascript", "mysql", "nodejs"]
+  },
+  {
+    "id": 3,
+    "name": "React Employee Directory",
+    "description": "An employee or manager would benefit greatly from being able to view non-sensitive data about other employees. Built with React, this page makes an API call to the Random User API to populate the employee data. That data can then be sorted by first or last name, ascending or descending, alphabetically. You can also search the list by first name, last name, or phone number.",
+    "img": "./img/employeeDirectory.png",
+    "alt": "React Employee Directory",
+    "repo": "https://github.com/serjykalstryke/employee-directory",
+    "app": "https://rocky-bastion-94883.herokuapp.com/",
+    "tech": ["react", "axios", "javascript"]
+  },
+  {
+    "id": 4,
+    "name": "GitHub Finder",
+    "description": "Search github using an API to find user profiles. Built using react and a context API.",
+    "img": "./img/githubFinder.png",
+    "alt": "GitHub Finder",
+    "repo": "https://github.com/serjykalstryke/githubFinder",
+    "app": "https://serjykalstrykegithubfinder.netlify.app/",
+    "tech": ["react", "javascript"]
+  },
+  {
+    "id": 5,
+    "name": "Notes App",
+    "description": "For users that need to keep track of a lot of information, it's easy to forget or be unable to recall something important. Being able to take persistent notes allows users to have written information available when needed. This application can be used to write, save, and delete notes by using an express backend to save and retrieve data from a JSON file.",
+    "img": "./img/noteTaker.png",
+    "alt": "Notes App",
+    "repo": "https://github.com/serjykalstryke/notes-app",
+    "app": "https://whispering-cliffs-94982.herokuapp.com",
+    "tech": ["nodejs", "express", "javascript"]
+  },
+  {
+    "id": 6,
+    "name": "Pitch",
+    "description": "Imagine you are hanging out with friends. Your buddy mentions a band he has been listening to. Another friend says she has heard of them too and you should check them out. What do you do? Add them to your spotify, maybe subscribe on youtube and then forget about this new band you might love because of the information overload of the modern world. Enter Pitch. Pitch allows you to search for artists and bands and get a bite sized chunk of what they are all about, including basic info, tour dates and their top youtube result to tell you at a glance if this new band is for you.",
+    "img": "./img/pitch.png",
+    "alt": "GitJobs",
+    "repo": "https://github.com/serjykalstryke/deep-cuts",
+    "app": "https://serjykalstryke.github.io/deep-cuts/",
+    "tech": ["javascript", "jquery", "Materialize"]
+  },
+  {
+    "id": 7,
+    "name": "Burger Time",
+    "description": "A burger logger with MySQL, Node, Express, Handlebars and a custom ORM. Following the MVC design pattern, I've used Node and MySQL to query and route data in the app, and Handlebars to generate the HTML.",
+    "img": "./img/burger.png",
+
+    "alt": "Eat Da Burger",
+    "repo": "https://github.com/serjykalstryke/burger",
+    "app": "https://polar-eyrie-61177.herokuapp.com/",
+    "tech": ["nodejs", "express", "javascript", "mysql", "jquery", "handlebars"]
+  }
+]

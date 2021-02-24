@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
 const Logo = ({ logo, logoAlt }) => {
   return (
     <Fragment>
-      <img src={logo} alt={logoAlt} width='100' />
+      <img src={logo} alt={logoAlt} width="100" />
     </Fragment>
   );
 };
