@@ -19,7 +19,7 @@ The application can be run in your local environment by:
 2. Install required dependencies by running command `npm i` in a terminal window that has the application directory open
 3. Run command `npm start` in your terminal
 
-View the deployed application <a href = "http://www.davidstinnett.info">here</a>
+View the deployed application <a href = "https://www.davidstinnett.info">here</a>
 
 ## Resources
 
