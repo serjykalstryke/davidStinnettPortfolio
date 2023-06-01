@@ -1,23 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import ProjectImage from '../projects/ProjectImage';
-import ProjectFilter from '../projects/ProjectFilter';
-import projects from '../projects/projects.json';
-import Container from 'react-bootstrap/Container';
+import React, { useState, useEffect } from "react";
+import ProjectImage from "../projects/ProjectImage";
+import ProjectFilter from "../projects/ProjectFilter";
+import projects from "../projects/projects.json";
+import Container from "react-bootstrap/Container";
 
-import ScrollAnimation from 'react-animate-on-scroll';
-import { AnimateSharedLayout } from 'framer-motion';
+import ScrollAnimation from "react-animate-on-scroll";
 
 // Loading
-import ReactLoading from 'react-loading';
+import ReactLoading from "react-loading";
 
 // State
 const Portfolio = () => {
   const [projectState, setProjectState] = useState({
     projectList: projects,
     filteredProjectList: projects,
-    loading: true
+    loading: true,
   });
-  const [filterState, setFilterState] = useState('');
+  const [filterState, setFilterState] = useState("");
 
   const projectListArray = projectState.projectList;
 
@@ -25,13 +24,13 @@ const Portfolio = () => {
   useEffect(() => {
     setProjectState({
       ...projectState,
-      filteredProjectList: projectListArray.filter(project => {
+      filteredProjectList: projectListArray.filter((project) => {
         return (
           // allow users to search by tech
           project.tech.toString().toLowerCase().indexOf(filterState) !== -1
         );
       }),
-      loading: false
+      loading: false,
     });
 
     // eslint-disable-next-line
@@ -41,31 +40,31 @@ const Portfolio = () => {
     <div>
       {projectState.loading ? (
         <ReactLoading
-          type={'bars'}
-          color={'white'}
-          style={{ alignContent: 'center' }}
+          type={"bars"}
+          color={"white"}
+          style={{ alignContent: "center" }}
         />
       ) : (
-        <AnimateSharedLayout>
-          <h1 className='recentProjects otherText'>Recent Projects</h1>
+        <>
+          <h1 className="recentProjects otherText">Recent Projects</h1>
           <hr />
 
           <ProjectFilter filter={setFilterState} />
 
           <hr />
           <Container>
-            <ScrollAnimation animateIn='fadeIn' animateOut='fadeOut'>
-              {projectState.filteredProjectList.map(projectInfo => (
+            <ScrollAnimation animateIn="fadeIn" animateOut="fadeOut">
+              {projectState.filteredProjectList.map((projectInfo) => (
                 <ProjectImage
                   layout
                   projectInfo={projectInfo}
                   key={projectInfo.id}
-                  layoutId='projects'
+                  layoutId="projects"
                 />
               ))}
             </ScrollAnimation>
           </Container>
-        </AnimateSharedLayout>
+        </>
       )}
     </div>
   );
