@@ -9,8 +9,6 @@ import Bio from "../info/Bio";
 import Stack from "../info/Stack";
 import StackMobile from "../info/StackMobile";
 
-
-
 function Home() {
   return (
     <Fragment>
@@ -30,7 +28,7 @@ function Home() {
         <ScrollAnimation
           animateIn="fadeIn"
           animateOut="fadeOut"
-          offset={500}
+          offset={400}
           initiallyVisible={false}
         >
           <Stack />

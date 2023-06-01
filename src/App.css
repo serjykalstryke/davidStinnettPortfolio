@@ -1,11 +1,10 @@
 * {
   font-family: Truculenta;
-  font-size: 1rem
+  font-size: 1rem;
 }
 
-
 body {
-  background-image:url("./images/Desert-Evening-Desktop-Wallpaper.png");
+  background-image: url("./images/Desert-Evening-Desktop-Wallpaper.png");
   background-attachment: fixed;
   background-size: 2650px 1440px;
   -webkit-background-size: 2650px 1440px;
@@ -15,54 +14,55 @@ body {
   color: white;
 }
 
-
-@keyframes particleAnimation
-{
+@keyframes particleAnimation {
   from {
-      left: -100px;
+    left: -100px;
   }
   to {
-      left: calc( 100% + 100px );
+    left: calc(100% + 100px);
   }
 }
 
-ul { 
-	display: inline-block; 
-	text-align: left; 
+ul {
+  display: inline-block;
+  text-align: left;
   list-style-type: none;
-	}
+}
 
 li::selection {
-  background-color: rgba(209,104,119, 1);
+  background-color: rgba(209, 104, 119, 1);
 }
-.s{
-position:fixed;
-left:0px;
-top:5px;
-width:0.2px;
-height:0.2px;
-background-color: rgba(0,0,0,0);
-position:fixed;
-animation-name:particleAnimation;
-animation-timing-function: linear;
-animation-iteration-count: infinite;
-border-radius: 50;
+.s {
+  position: fixed;
+  left: 0px;
+  top: 5px;
+  width: 0.2px;
+  height: 0.2px;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  animation-name: particleAnimation;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  border-radius: 50;
 }
-.s::before{
-position:absolute;
-display:block;
-content:"";
-width:100px;
-right:1px;
-top:10px;
-height:1px;
-background: linear-gradient(to right, rgba(0,0,0,0) 0%,rgba(255,255,255,0.4) 100%); 
+.s::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100px;
+  right: 1px;
+  top: 10px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(255, 255, 255, 0.4) 100%
+  );
 }
-.p-1{
-animation-duration:30s;
-top: 20%;
+.p-1 {
+  animation-duration: 30s;
+  top: 20%;
 }
-
 
 .dot {
   height: 1px;
@@ -71,10 +71,9 @@ top: 20%;
   display: inline-block;
 }
 
-
 .fa-satellite {
-  color: rgba(0,0,0,0.25);
-  z-index: -1
+  color: rgba(0, 0, 0, 0.25);
+  z-index: -1;
 }
 
 .top {
@@ -83,14 +82,13 @@ top: 20%;
 
 img {
   border-radius: 50%;
-  padding-top: 10%; 
+  padding-top: 10%;
   padding-bottom: 5%;
 }
 
 #me {
   width: 30%;
   height: auto;
-  
 }
 
 .jumbotron {
@@ -108,7 +106,6 @@ img {
   display: flex;
   align-items: center; /* center each of our links vertically */
   margin: auto; /* center all our content horizontally when we exceed that max-width */
-  
 }
 
 .links {
@@ -118,7 +115,7 @@ img {
 }
 
 .links:hover {
-  color: rgba(209,104,119, 1)
+  color: rgba(209, 104, 119, 1);
 }
 
 .logo {
@@ -128,12 +125,12 @@ img {
 .landingBlock {
   margin-top: 20%;
   /* margin-bottom: 15%; */
-  padding-bottom: 10%
+  padding-bottom: 10%;
 }
 
 .landingMargin {
   margin-bottom: 3rem;
-  font-family: "Rock Salt"
+  font-family: "Rock Salt";
 }
 
 .text {
@@ -142,25 +139,24 @@ img {
 }
 
 .text::selection {
-  background-color: rgba(209,104,119, 1)
+  background-color: rgba(209, 104, 119, 1);
 }
 
-
 .otherText {
-  color: white
+  color: white;
 }
 
 .otherText::selection {
-  background-color: rgba(209,104,119, 1)
+  background-color: rgba(209, 104, 119, 1);
 }
 
 .recentProjects {
-  font-family: "Rock Salt"
+  font-family: "Rock Salt";
 }
 
 .bioBlock {
-  margin-top: 15%;
-  margin-bottom: 25%;
+  margin-top: 25%;
+  margin-bottom: 50%;
   padding-bottom: 15%;
 }
 
@@ -261,7 +257,7 @@ img {
 
 .mediaQuery {
   width: 100% !important;
-  background-color: rgba(209,104,119,.85);
+  background-color: rgba(209, 104, 119, 0.85);
 }
 
 #nav-icon1 {
@@ -334,7 +330,6 @@ img {
 }
 
 @media (max-width: 768px) {
-
   body:before {
     content: "";
     display: block;
@@ -344,7 +339,8 @@ img {
     width: 100%;
     height: 100%;
     z-index: -10;
-    background: url("./images/Desert-Evening-Desktop-Wallpaper.png") no-repeat center center;
+    background: url("./images/Desert-Evening-Desktop-Wallpaper.png") no-repeat
+      center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -397,14 +393,13 @@ img {
     align-items: center;
     margin-top: 5%;
     width: 100%;
-    background-color: rgba(209,104,119,.85);
+    background-color: rgba(209, 104, 119, 0.85);
     padding: 2rem;
   }
 
   .links {
     font-size: 2rem;
     font-weight: bold;
-    
   }
 
   nav.dropdown-opened > .dropdown-link-container {
@@ -420,19 +415,16 @@ img {
     margin-bottom: 1rem;
   }
   .bioBlock {
-    margin-top: 5%;
-    margin-bottom: 5%;
   }
   .stackBlock {
-    margin-top: 5%;
-    margin-bottom: 25%;
-    padding-bottom: 20%
+    margin-bottom: 50px;
+    padding-bottom: 50%;
   }
+
   .headshot {
     max-width: 40%;
   }
   .projectDetail {
-
     border-radius: 1rem;
     padding: 0;
     justify-content: center;
@@ -443,9 +435,4 @@ img {
   .hideMobile {
     display: none;
   }
-
- 
 }
-
-
-
